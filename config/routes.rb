@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :articles
-  root 'pages#home'
-  get 'about', to: 'pages#about'
+  root "pages#home"
+  resources :articles, only: %i[show index]
 end
