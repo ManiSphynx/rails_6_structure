@@ -1,0 +1,58 @@
+$navbar-default-bg: black;
+
+/* @import "bootstrap-sprockets"; */
+@import "bootstrap/dist/css/bootstrap";
+
+html,
+body {
+  height: 100%;
+}
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  color: white;
+  float: left;
+  font-size: 1.7em;
+  font-weight: bold;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+#home-container {
+  margin-top: 25px;
+}
+
+#logo:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url("card.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 470px;
+  color: #000000;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: rgb(237, 237, 237);
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  color: white !important;
+}
