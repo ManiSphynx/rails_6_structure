@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[edit update show destroy]
   include ApplicationHelper
 
+  def show
+    @articles = @user.articles
+  end
+
   def new
     @user = User.new
   end
