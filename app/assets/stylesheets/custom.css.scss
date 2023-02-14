@@ -10,6 +10,10 @@ body {
 
 .navbar {
   background-color: black !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .nav-link {
@@ -54,5 +58,8 @@ body {
 
 #sticky-footer {
   flex-shrink: none;
-  color: white !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
