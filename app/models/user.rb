@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :articles, dependent: :destroy # Prefer to use a flag to mark the record as deleted
   before_save { self.email = email.downcase }
   validates :username,
             presence: true,
