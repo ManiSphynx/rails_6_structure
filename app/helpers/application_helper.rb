@@ -3,6 +3,10 @@ module ApplicationHelper
     flash[:notice] = message
   end
 
+  def flash_error(message)
+    flash.now[:alert] = message
+  end
+
   def gravatar_for(user, options = { size: 80 })
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
     size = options[:size]
