@@ -1,6 +1,7 @@
 module ApplicationHelper
-  def flash_message(message)
-    flash[:notice] = message
+  def flash_message(message, type = :notice)
+    p type, " ----------------type argument --------------------"
+    flash[type] = message
   end
 
   def flash_error(message)
