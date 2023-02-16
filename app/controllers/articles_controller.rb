@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[edit update show destroy]
+  before_action :require_user, except: %i[show index]
+  before_action :require_same_user, only: %i[edit update destroy]
   include ApplicationHelper
 
   def show
@@ -18,7 +20,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = current_user
 
     if @article.save
       flash_message("Article was created successfully")
@@ -51,5 +53,12 @@ class ArticlesController < ApplicationController
 
   def set_article
     @article = Article.find(params[:id])
+  end
+
+  def require_same_user
+    unless current_user == @article.user
+      flash_message("You can only edit or delete your own articles", :alert)
+      redirect_to @article
+    end
   end
 end
